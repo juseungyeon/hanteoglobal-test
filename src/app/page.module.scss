@@ -1,0 +1,17 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 425px;
+  margin: 0 auto;
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  position: relative;
+}
+
+.contentSwiper {
+  flex: 1;
+  width: 100%;
+}

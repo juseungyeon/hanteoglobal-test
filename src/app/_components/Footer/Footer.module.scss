@@ -1,0 +1,35 @@
+.footer {
+  background-color: var(--gray-100);
+  padding: 16px;
+  text-align: center;
+}
+
+.footerText {
+  color: var(--gray-700);
+  font-size: 14px;
+}
+
+.scrollTopButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken(#ffb0b2, 10%);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

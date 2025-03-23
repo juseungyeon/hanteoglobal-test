@@ -1,0 +1,29 @@
+.contentListContainer {
+  padding: 0 16px 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0;
+  color: var(--gray-900);
+}
+
+.contentList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading,
+.error,
+.loadingMore {
+  text-align: center;
+  padding: 16px;
+  color: var(--gray-700);
+}
+
+.loadMore {
+  padding: 16px 0;
+  height: 20px;
+}
