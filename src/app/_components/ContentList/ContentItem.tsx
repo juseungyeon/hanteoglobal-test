@@ -11,8 +11,8 @@ export default function ContentItem({ item }: ContentItemProps) {
     <a href={item.link} className={styles.contentItem}>
       <div className={styles.imageContainer}>
         <Image
-          width={80}
-          height={80}
+          width={100}
+          height={100}
           src={item.imageUrl}
           alt={item.title}
           className={styles.image}

@@ -15,15 +15,83 @@
   gap: 16px;
 }
 
-.loading,
-.error,
-.loadingMore {
-  text-align: center;
-  padding: 16px;
-  color: var(--gray-700);
+// 스켈레톤 애니메이션
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
+// 스켈레톤 UI
+.skeletonItem {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skeletonImage {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(110deg, #f0f0f0 8%, #f8f8f8 18%, #f0f0f0 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeletonContent {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skeletonTitle {
+  width: 70%;
+  height: 18px;
+  border-radius: 4px;
+  background: linear-gradient(110deg, #f0f0f0 8%, #f8f8f8 18%, #f0f0f0 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+// 로딩 스피너
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 0.8s linear infinite;
+  margin: 20px auto;
+}
+
+// 에러 메시지
+.error {
+  text-align: center;
+  padding: 16px;
+  color: red;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+// 로딩 더 보기 영역
 .loadMore {
   padding: 16px 0;
-  height: 20px;
+  display: flex;
+  justify-content: center;
 }

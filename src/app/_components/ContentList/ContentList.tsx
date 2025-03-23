@@ -53,12 +53,26 @@ export default function ContentList({ category }: ContentListProps) {
     };
   }, [handleObserver]);
 
+  // 스켈레톤 로딩 UI 렌더링 함수
+  const renderSkeletons = () => {
+    return Array(4)
+      .fill(0)
+      .map((_, index) => (
+        <div key={index} className={styles.skeletonItem}>
+          <div className={styles.skeletonImage}></div>
+          <div className={styles.skeletonContent}>
+            <div className={styles.skeletonTitle}></div>
+          </div>
+        </div>
+      ));
+  };
+
   return (
     <div className={styles.contentListContainer}>
       <h2 className={styles.title}>{category}</h2>
 
       {status === "pending" ? (
-        <div className={styles.loading}>로딩 중...</div>
+        <div className={styles.contentList}>{renderSkeletons()}</div>
       ) : status === "error" ? (
         <div className={styles.error}>에러가 발생했습니다.</div>
       ) : (
@@ -74,9 +88,7 @@ export default function ContentList({ category }: ContentListProps) {
           </div>
 
           <div ref={loadMoreRef} className={styles.loadMore}>
-            {isFetchingNextPage && (
-              <div className={styles.loadingMore}>더 불러오는 중...</div>
-            )}
+            {isFetchingNextPage && <div className={styles.spinner}></div>}
           </div>
         </>
       )}

@@ -29,7 +29,21 @@ export default function BannerSlider() {
   }, []);
 
   if (loading) {
-    return <div className={styles.loading}>로딩 중...</div>;
+    return (
+      <div className={styles.bannerWrapper}>
+        <div className={styles.skeletonBanner}>
+          <div className={styles.skeletonContent}>
+            <div className={styles.skeletonTitle}></div>
+            <div className={styles.skeletonSubtitle}></div>
+          </div>
+        </div>
+        <div className={styles.skeletonPagination}>
+          <div className={styles.skeletonBullet}></div>
+          <div className={styles.skeletonBullet}></div>
+          <div className={styles.skeletonBullet}></div>
+        </div>
+      </div>
+    );
   }
 
   return (
