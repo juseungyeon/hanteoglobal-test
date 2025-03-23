@@ -15,6 +15,7 @@ const tabs = ["차트", "Whook", "이벤트", "뉴스", "스토어", "충전소"
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const swiperRef = useRef<SwiperType>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   // 탭 변경 핸들러
   const handleTabChange = (index: number) => {
@@ -24,10 +25,21 @@ export default function Home() {
     if (swiperRef.current) {
       swiperRef.current.slideTo(index);
     }
+
+    // 페이지 맨 위로 스크롤
+    window.scrollTo({ top: 0 });
+  };
+
+  // 슬라이드 변경 시에도 스크롤 위치 초기화
+  const handleSlideChange = (swiper: SwiperType) => {
+    setActiveTab(swiper.activeIndex);
+
+    // 페이지 맨 위로 스크롤
+    window.scrollTo({ top: 0 });
   };
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} ref={mainRef}>
       {/* 상단 탭 메뉴 - 고정 */}
       <TabMenu
         tabs={tabs}
@@ -45,7 +57,7 @@ export default function Home() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          onSlideChange={(swiper) => setActiveTab(swiper.activeIndex)}
+          onSlideChange={handleSlideChange}
           spaceBetween={0}
           slidesPerView={1}
         >
