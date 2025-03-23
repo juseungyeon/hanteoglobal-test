@@ -28,14 +28,13 @@ export default function Home() {
 
   return (
     <div className={styles.main}>
+      {/* 상단 탭 메뉴 - 고정 */}
+      <TabMenu
+        tabs={tabs}
+        activeTab={activeTab}
+        onTabChange={handleTabChange}
+      />
       <main>
-        {/* 상단 탭 메뉴 - 고정 */}
-        <TabMenu
-          tabs={tabs}
-          activeTab={activeTab}
-          onTabChange={handleTabChange}
-        />
-
         {/* 배너 영역 - 모든 탭에서 공통 */}
         <BannerSlider />
 

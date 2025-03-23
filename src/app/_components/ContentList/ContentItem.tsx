@@ -19,7 +19,7 @@ export default function ContentItem({ item }: ContentItemProps) {
         />
       </div>
       <div className={styles.content}>
-        <h3 className={styles.title}>{item.title}</h3>
+        <p className={styles.title}>{item.title}</p>
       </div>
     </a>
   );

@@ -94,6 +94,7 @@ export default function TabMenu({
             activeTab === index ? styles.activeTab : ""
           }`}
           onMouseDown={(e) => handleTabMouseDown(index, e)}
+          onClick={() => onTabChange(index)}
         >
           {tab}
         </button>
