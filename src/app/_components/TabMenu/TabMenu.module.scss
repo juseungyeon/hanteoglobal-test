@@ -1,6 +1,7 @@
 .tabMenuContainer {
   position: fixed;
   top: 0;
+  max-width: 425px;
   height: 48px;
   z-index: 100;
   background-color: var(--primary-color);
